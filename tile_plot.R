@@ -1,6 +1,6 @@
 library(tidyverse)
 
-dat <- read_excel("/Users/valeriaduran/Downloads/NPSLE  gene search_VD cm2.xlsx", sheet = "matrix")
+dat <- read_excel("", sheet = "matrix")
 
 
 breaks <- c(10e-21,10e-10,10e-5,10e-2,1e-1)
@@ -11,6 +11,6 @@ ggplot(dat %>% mutate(significance = .5 - dat$`p-value_p`)) + geom_tile(aes(x = 
   #geom_text(aes(x = dat$`FC (log2)`,y = dat$FC_P,label=Protein), check_overlap = TRUE, size=3.2, colour="blue", nudge_x = 0.75)+
   geom_point(aes(x=dat$`FC (log2)`,y = dat$FC_P, size= significance), colour = rgb(245, 127, 32, maxColorValue = 255))+ 
   theme_classic() +  theme(legend.position='none') + 
-  xlab("Gene FC in NPSLE choroid plexus (log2)") + ylab("Protein FC in NPSLE CSF ")
+  xlab("Gene FC (log2)") + ylab("Protein FC  ")
 dev.off()
 
