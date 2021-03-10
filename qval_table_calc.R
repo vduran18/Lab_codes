@@ -2,7 +2,7 @@ library("qvalue")
 library(readxl)
 library(stats)
 
-fig1 <- read_excel("/Users/valeriaduran/Downloads/fig 1 E sheet 24April2020.xlsx", sheet = 2) 
+fig1 <- read_excel("", sheet = 2) 
 fig <- tibble(fig1)
 pval <- fig$u.pval.UC.HC
 qobj <- qvalue(p = pval)
@@ -87,7 +87,7 @@ library("qvalue")
 library(readxl)
 library(stats)
 
-fig <- read_excel("/Users/valeriaduran/Downloads/fig 1 E sheet 24April2020.xlsx", sheet = 2) 
+fig <- read_excel("", sheet = 2) 
 
 pval_UC.HC <- fig$u.pval.UC.HC
 
