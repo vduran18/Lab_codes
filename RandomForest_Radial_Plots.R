@@ -10,11 +10,11 @@ library(rsample)
 library(tidyverse)
 library(dplyr)
 
-dat <- read_excel("/Users/valeriaduran/Google Drive/Mohan Lab/Ting/AI_CI_April2020/2020-4-14  AI CI correlation.xlsx", sheet = "AI+CI")
-dat_CI <- read_excel("/Users/valeriaduran/Google Drive/Mohan Lab/Ting/AI_CI_April2020/2020-4-14  AI CI correlation.xlsx", sheet = "CI")
+dat <- read_excel("")
+dat_CI <- read_excel("")
 names(dat_CI) <- make.names(names(dat_CI))
 
-dat_AI <- read_excel("/Users/valeriaduran/Google Drive/Mohan Lab/Ting/AI_CI_April2020/2020-4-14  AI CI correlation.xlsx", sheet = "AI")
+dat_AI <- read_excel("")
 names(dat_AI) <- make.names(names(dat_AI))
 
 #Get values with FC >2 and p-value < 0.05
@@ -33,7 +33,7 @@ write.csv(AI_corr, "AItop50.csv")
 
 ###Random Forest TOP 50 CI
 
-dat <- read_excel("/Users/valeriaduran/Google Drive/Mohan Lab/Ting/AI_CI_April2020/2020-4-14  AI CI correlation.xlsx", sheet = "CI_top50")
+dat <- read_excel("")
 
 
 names(dat) <- make.names(names(dat))
@@ -159,7 +159,7 @@ plot + coord_polar()
 
 #### RF for Top AI
 
-dat1 <- read_excel("/Users/valeriaduran/Google Drive/Mohan Lab/Ting/AI_CI_April2020/2020-4-14  AI CI correlation.xlsx", sheet = "AI_top50")
+dat1 <- read_excel("")
 
 
 names(dat1) <- make.names(names(dat1))
@@ -270,8 +270,7 @@ label_data <- imp
 
 # calculate the ANGLE of the labels
 number_of_bar <- nrow(label_data)
-angle <-  90 - 360 * (label_data$varnames-0.5) /number_of_bar     # I substract 0.5 because the letter must have the angle of the center of the bars. Not extreme right(1) or extreme left (0)
-
+angle <-  90 - 360 * (label_data$varnames-0.5) /number_of_bar     
 # calculate the alignment of labels: right or left
 # If I am on the left part of the plot, my labels have currently an angle < -90
 label_data$hjust<-ifelse( angle < -90, 1, 0)
@@ -282,8 +281,7 @@ label_data$angle<-ifelse(angle < -90, angle+180, angle)
 
 
 # Start the plot
-p <- ggplot(imp, aes(x=varnames, y=MeanDecreaseGini)) +       # Note that id is a factor. If x is numeric, there is some space between the first bar
-  
+p <- ggplot(imp, aes(x=varnames, y=MeanDecreaseGini)) +       
   # This add the bars with a blue color
   geom_bar(stat="identity", fill=alpha("skyblue", 0.7)) +
   
