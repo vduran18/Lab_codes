@@ -2,11 +2,11 @@ library(readxl)
 library(corrplot)
 
 #set working directory
-setwd("/Users/valeriaduran/Google Drive/Mohan Lab/KAMALA/DEC2020")
+setwd("/")
 
 #read in data
 
-val <- read_csv("braindiseasehybnormmednormplatescale.csv")
+val <- read_csv("")
 
 
 ############# NEW VOLC DEC 2020
@@ -53,7 +53,7 @@ ggplot(val,aes(x=log2(val$FC.SCA.Control),
 dev.off()
 
 
-val <- read_excel("/Users/valeriaduran/Downloads/VK-braindiseaseserum-hybnormmednormplatescale3August2020.xlsx", sheet = "SCAvsHCt")
+val <- read_excel("", sheet = "")
 
 
 str(dat)
@@ -64,7 +64,7 @@ names(dat)
 dat <- val[,-1]
 matrix_cor <- cor(dat)
 #Generate the heatmap
-jpeg(file="VD_SCAvsCTRL_corrplot_DEC9.jpeg",
+jpeg(file="VD_.jpeg",
      height = 12, width = 12, units='cm', res = 600)
 corrplot(matrix_cor, type = "upper",tl.col="black", tl.cex = 0.4)
 dev.off()
@@ -74,7 +74,7 @@ dev.off()
 ### PCA ANALYSIS
 
 res.pca <- prcomp(val[,-1], scale = TRUE)
-jpeg(file="VD_2DPCA_SCAvsHC_10DEC.jpeg",
+jpeg(file="VD_2DPCA_.jpeg",
      height = 20, width = 20, units='cm', res = 600)
 fviz_pca_ind(res.pca,
              label = "none", # hide individual labels
