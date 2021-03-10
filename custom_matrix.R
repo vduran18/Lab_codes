@@ -9,7 +9,7 @@ library(readxl)
 
 ##ALCAM Brightness ratio
 
-alcam <- read_excel("/Users/valeriaduran/Desktop/matrix data_VD.xlsx", sheet = 2)
+alcam <- read_excel("")
 # 24th column has renal involvement, did not include for this figure
 #rawdata2 <- rawdata[(rawdata$Disease.Status == 3) | (rawdata$Disease.Status ==2),]
 alcam_matrix <- as.matrix(alcam)
@@ -89,7 +89,7 @@ grid.draw(plotNew)
 
 ##hvem Brightness ratio
 
-hvem <- read_excel("/Users/valeriaduran/Desktop/matrix data_VD.xlsx", sheet = 4)
+hvem <- read_excel("", sheet = 4)
 
 plot_hvem <- ggplot(hvem) +
   geom_raster(aes(x=Immobilized, y= Functionalized, fill=SNR)) +
